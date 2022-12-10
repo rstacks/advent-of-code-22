@@ -41,15 +41,22 @@ class GametypeA:
     get_total_score(round_scores)
         Return total score given list of all individual round scores.
     """
+    
     def get_weapon(self, char):
-        """Return weapon associated with provided character.
+        """
+        Return weapon associated with provided character.
         
-        Args:
-            char: single-character string representing a weapon
-        Returns:
-            corresponding weapon as string
-        Raises:
-            KeyError: provided char has no corresponding weapon
+        Args
+        ----
+        char: single-character string representing a weapon
+        
+        Returns
+        -------
+        corresponding weapon as string
+        
+        Raises
+        ------
+        KeyError: provided char has no corresponding weapon
         """
         weapon_dict = {
             "A":"rock", "B":"paper", "C":"scissors", 
@@ -58,15 +65,21 @@ class GametypeA:
         return weapon_dict[char]
 
     def get_outcome(self, user_wep, opponent_wep):
-        """Determine outcome of an RPS round given contenders' weapons.
+        """
+        Determine outcome of an RPS round given contenders' weapons.
 
-        Args:
-            user_wep: string with player's chosen weapon
-            opponent_wep: string with opponent's chosen weapon
-        Returns:
-            "win", "draw", or "loss" depending on outcome for player
-        Raises:
-            KeyError: provided user_wep param is not an available weapon
+        Args
+        ----
+        user_wep: string with player's chosen weapon
+        opponent_wep: string with opponent's chosen weapon
+        
+        Returns
+        -------
+        "win", "draw", or "loss" depending on outcome for player
+        
+        Raises
+        ------
+        KeyError: provided user_wep param is not an available weapon
         """
         win_combo_dict = {
             "rock":"scissors", "paper":"rock", "scissors":"paper"
@@ -78,16 +91,22 @@ class GametypeA:
         return "loss"
 
     def get_round_score(self, user_wep, opponent_wep):
-        """Return RPS round score given contenders' weapons.
+        """
+        Return RPS round score given contenders' weapons.
 
-        Args:
-            user_wep: string with player's chosen weapon
-            opponent_wep: string with opponent's chosen weapon
-        Returns:
-            int score for player based on their chosen weapon and
-            outcome of round for them
-        Raises:
-            KeyError: provided user_wep param is not an available weapon
+        Args
+        ----
+        user_wep: string with player's chosen weapon
+        opponent_wep: string with opponent's chosen weapon
+        
+        Returns
+        -------
+        int score for player based on their chosen weapon and
+        outcome of round for them
+        
+        Raises
+        ------
+        KeyError: provided user_wep param is not an available weapon
         """
         score_dict = {
             "rock":1, "paper":2, "scissors":3,
@@ -97,15 +116,21 @@ class GametypeA:
         return score_dict[user_wep] + score_dict[outcome]
 
     def get_total_score(self, round_scores):
-        """Return total score given list of all individual round scores.
+        """
+        Return total score given list of all individual round scores.
         
-        Args:
-            round_scores: iterable containing numeric values
-            representing RPS round scores
-        Returns:
-            numeric sum of all values in round_scores iterable
-        Raises:
-            TypeError: provided param contains non-numeric data
+        Args
+        ----
+        round_scores: iterable containing numeric values
+        representing RPS round scores
+        
+        Returns
+        -------
+        numeric sum of all values in round_scores iterable
+        
+        Raises
+        ------
+        TypeError: provided param contains non-numeric data
         """
         return sum(round_scores)
 

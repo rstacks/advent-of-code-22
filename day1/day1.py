@@ -15,28 +15,40 @@
 
 
 def store_elf_data(current_elf_data, all_elf_data):
-    """Store current elf's calorie sum in provided list.
+    """
+    Store current elf's calorie sum in provided list.
 
-    Args:
-        current_elf_data: int list of current elf's calorie counts
-        all_elf_data: int list containing all elves' calorie sums
-    Returns:
-        None
-    Raises:
-        TypeError: provided param(s) contain non-numeric elements
+    Args
+    ----
+    current_elf_data: int list of current elf's calorie counts
+    all_elf_data: int list containing all elves' calorie sums
+    
+    Returns
+    -------
+    None
+    
+    Raises
+    ------
+    TypeError: provided param(s) contain non-numeric elements
     """
     all_elf_data.append(sum(current_elf_data))
 
 
 def is_cal_count(str):
-    """Returns True if param contains a calorie count.
+    """
+    Returns True if param contains a calorie count.
 
-    Args:
-        str: string to be evaluated
-    Returns:
-        True if str contains a calorie count, False otherwise
-    Raises:
-        TypeError: provided param is not string
+    Args
+    ----
+    str: string to be evaluated
+    
+    Returns
+    -------
+    True if str contains a calorie count, False otherwise
+    
+    Raises
+    ------
+    TypeError: provided param is not string
     """
     if len(str) <= 1:
         return False
@@ -44,17 +56,23 @@ def is_cal_count(str):
 
 
 def top_count(all_elf_data, num):
-    """Sum calories for top num calorie-carrying elves.
+    """
+    Sum calories for top num calorie-carrying elves.
 
-    Args:
-        all_elf_data: int list of all elves' calorie sums
-        num: int number of highest calorie carriers to sum
-    Returns:
-        int sum of calorie counts from top num calorie carriers
-    Raises:
-        TypeError: provided list param contains non-numeric elements
-        TypeError: provided num param is not int
-        ValueError: list param has too few elements given num param
+    Args
+    ----
+    all_elf_data: int list of all elves' calorie sums
+    num: int number of highest calorie carriers to sum
+    
+    Returns
+    -------
+    int sum of calorie counts from top num calorie carriers
+    
+    Raises
+    ------
+    TypeError: provided list param contains non-numeric elements
+    TypeError: provided num param is not int
+    ValueError: list param has too few elements given num param
     """
     copied_data = all_elf_data[:]
     sum = 0
