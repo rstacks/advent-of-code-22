@@ -1,4 +1,4 @@
-# PROBLEM:
+# CHALLENGE INTRO:
 # Santa's elves are carrying food items for a journey into the jungle.
 # Each food item has a certain number of calories. The file
 # day1_input.txt contains the calorie count of each food item on a
@@ -65,7 +65,7 @@ def top_count(all_elf_data, num):
 
 
 # Open input file and prepare lists for storing calorie counts
-cal_file = open("day1_input.txt")
+cal_file = open("./day1/day1_input.txt")
 current_line = cal_file.readline()
 elf_data = []
 all_data = []
