@@ -135,6 +135,26 @@ class GametypeA:
         return sum(round_scores)
 
 
+# new get_weapons(my_char, elf_char) method
+# returns tuple of strings for me and the elf
+# calls superclass get_weapon for elf normally, will call
+# get_weapon for me depending on win/loss relative to elf's game
+
+class GametypeB(GametypeA):
+    def get_weapons(self, user_char, opponent_char):
+        outcome_dict = {"X":"loss", "Y":"draw", "Z":"win"}
+        correct_outcome = outcome_dict[user_char]
+        wep_list = ["rock", "paper", "scissors"]
+        user_wep = wep_list[0]
+        opponent_wep = self.get_weapon(opponent_char)
+        trial_outcome = self.get_outcome(user_wep, opponent_wep)
+        while trial_outcome != correct_outcome:
+            wep_list = wep_list[1:]
+            user_wep = wep_list[0]
+            trial_outcome = self.get_outcome(user_wep, opponent_wep)
+        return (user_wep, opponent_wep)
+
+
 # PART 1 Solution
 # Iterate through all lines in input file and compile round scores
 game1 = GametypeA()

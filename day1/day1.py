@@ -22,7 +22,7 @@ def store_elf_data(current_elf_data, all_elf_data):
     ----
     current_elf_data: int list of current elf's calorie counts
     all_elf_data: int list containing all elves' calorie sums
-    
+
     Returns
     -------
     None
