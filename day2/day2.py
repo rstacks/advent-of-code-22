@@ -215,6 +215,7 @@ def play_game(game):
             round = rounds.readline().strip()
     print(f"{game.get_total_score(round_scores)} is my total score")
 
+
 # PART 1 Solution
 # Iterate through all lines in input file and compile round scores
 game1 = GametypeA()
