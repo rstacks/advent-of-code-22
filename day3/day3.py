@@ -24,5 +24,18 @@ def get_priority(char):
     return ord(char) - (65-27)
 
 
-def get_priority_list():
-    pass
+def get_priority_list(file):
+    ret = []
+    items = file.readline().strip()
+    while items != "":
+        rucksack = create_rucksack(items)
+        priority = get_priority(find_common_item(rucksack))
+        ret.append(priority)
+        items = file.readline().strip()
+    return ret
+
+
+input_stream = open("./day3/day3_input.txt")
+priority_list = get_priority_list(input_stream)
+input_stream.close()
+print(f"The sum of the priorities is {sum(priority_list)}")
