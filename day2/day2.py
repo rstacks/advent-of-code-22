@@ -217,7 +217,6 @@ def play_game(game):
 
 
 # PART 1 Solution
-# Iterate through all lines in input file and compile round scores
 game1 = GametypeA()
 print("Part 1:", end=" ")
 play_game(game1)
