@@ -26,7 +26,7 @@ def get_greater_end(secs1, secs2):
         secs2_split[i] = int(secs2_split[i])
     if secs1_split[-1] > secs2_split[-1]:
         return secs1
-    if secs1_split[0] == secs2_split[0]:
+    if secs1_split[-1] == secs2_split[-1]:
         secs1_len = secs1_split[-1] - secs1_split[0]
         secs2_len = secs2_split[-1] - secs2_split[0]
         if secs1_len > secs2_len:
@@ -53,7 +53,6 @@ with open("./day4/day4_input.txt") as pairs_list:
     while assn_pair != "":
         if fully_contains(assn_pair):
             num_containing_pairs += 1
-            print(assn_pair)
         assn_pair = pairs_list.readline().strip()
 print(num_containing_pairs, end=" ")
 print("pairs have one range that fully contains the other")
