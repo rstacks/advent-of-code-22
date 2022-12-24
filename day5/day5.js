@@ -43,7 +43,7 @@ const reader = readline.createInterface({
     terminal: false
 });
 
-let ln_num = 0
+let ln_num = 0;
 reader.on("line", (line) => {
     const instruction = line.trim();
     move_crates(instruction);
