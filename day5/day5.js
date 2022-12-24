@@ -15,14 +15,25 @@ let stacks = {
 };
 
 
-function move_crates(line) {
+function move_crates(line, mode = 1) {
     const instructs = line.split(" ");
     const num_to_move = Number(instructs[1]);
     const origin_stack = Number(instructs[3]);
     const destination_stack = Number(instructs[5]);
-    for (let i = 0; i < num_to_move; i++) {
-        const moving_crate = stacks[origin_stack].pop();
-        stacks[destination_stack].push(moving_crate);
+    if (mode == 2) {
+        const removal_i = stacks[origin_stack] - num_to_move;
+        const moving_stack = stacks[origin_stack].splice(
+            removal_i, 
+            num_to_move
+        );
+        stacks[destination_stack] = stacks[destination_stack].concat(
+            moving_stack
+        );
+    } else {
+        for (let i = 0; i < num_to_move; i++) {
+            const moving_crate = stacks[origin_stack].pop();
+            stacks[destination_stack].push(moving_crate);
+        }
     }
 }
 
@@ -46,7 +57,7 @@ const reader = readline.createInterface({
 let ln_num = 0;
 reader.on("line", (line) => {
     const instruction = line.trim();
-    move_crates(instruction);
+    move_crates(instruction, 2);
     ln_num++;
     if (ln_num == 501) {
         console.log("The top crates are: " + get_top_crates());
