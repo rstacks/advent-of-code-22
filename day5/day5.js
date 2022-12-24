@@ -1,3 +1,6 @@
+const fs = require("fs");
+const readline = require("readline");
+
 // Each stack is organized bottom-to-top
 let stacks = {
     1: ["R", "G", "H", "Q", "S", "B", "T", "N"],
@@ -10,3 +13,20 @@ let stacks = {
     8: ["Q", "V", "W", "S"],
     9: ["W", "H", "L", "M", "T", "D", "N", "C"]
 };
+
+
+
+
+
+
+
+
+const day5_input = fs.createReadStream("./day5/day5_input.txt");
+const reader = readline.createInterface({
+    input: day5_input,
+    terminal: false
+});
+
+reader.on("line", (line) => {
+    console.log(line);
+});
